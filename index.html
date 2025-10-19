@@ -1,320 +1,583 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>نموذج أولي لمشروع Crypto Serv</title>
-   <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-   <style>
-       body {
-           font-family: 'Tajawal', sans-serif;
-           background-color: #0D1117;
-           color: #E6EDF3;
-       }
-       .glass-effect {
-           background: rgba(22, 27, 34, 0.6);
-           backdrop-filter: blur(10px);
-           -webkit-backdrop-filter: blur(10px);
-           border: 1px solid rgba(48, 54, 61, 0.5);
-       }
-       .gradient-text {
-           background: linear-gradient(90deg, #58A6FF, #A371F7);
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-           background-clip: text;
-           text-fill-color: transparent;
-       }
-       .glow-button {
-           box-shadow: 0 0 10px rgba(88, 166, 255, 0.5), 0 0 20px rgba(163, 113, 247, 0.3);
-       }
-       .feature-card:hover {
-           transform: translateY(-5px);
-           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-           border-color: #58A6FF;
-       }
-       .timeline-item::before {
-           content: '';
-           position: absolute;
-           top: 12px;
-           right: -21px;
-           width: 12px;
-           height: 12px;
-           border-radius: 50%;
-           background-color: #58A6FF;
-           border: 2px solid #0D1117;
-       }
-   </style>
-</head>
-<body class="antialiased">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Serv | The All-in-One Crypto Services Ecosystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', sans-serif;
+        background-color: #030712;
+        color: #f1f5f9;
+      }
+      .glass {
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(148, 163, 184, 0.12);
+      }
+      .gradient-border {
+        position: relative;
+      }
+      .gradient-border::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        border-radius: 1rem;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(20, 184, 166, 0.6));
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+      .bg-grid {
+        background-image: linear-gradient(
+            rgba(148, 163, 184, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .hero-gradient {
+        background: radial-gradient(circle at top left, rgba(99, 102, 241, 0.35), transparent 45%),
+          radial-gradient(circle at top right, rgba(20, 184, 166, 0.25), transparent 40%);
+      }
+      .section-title span {
+        background: linear-gradient(135deg, #a855f7, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Navigation -->
+    <header class="fixed inset-x-0 top-0 z-40">
+      <div class="mx-auto max-w-7xl px-6 py-5">
+        <nav class="glass gradient-border relative flex items-center justify-between rounded-2xl px-6 py-4">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/60">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6 text-cyan-300"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21c4.97 0 9-2.91 9-6.5S16.97 8 12 8s-9 2.91-9 6.5c0 1.79 1.2 3.4 3.12 4.57C4.05 19.12 3 20.44 3 22c1.55 0 2.86-1.05 3.93-3.12C8.6 19.8 10.24 20.3 12 20.3Z"
+                />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Crypto Serv</p>
+              <p class="text-lg font-semibold text-white">Unified Crypto Services</p>
+            </div>
+          </div>
+          <div class="hidden items-center gap-8 text-sm font-medium text-slate-300 lg:flex">
+            <a href="#services" class="hover:text-white transition">Services</a>
+            <a href="#talent" class="hover:text-white transition">Talent Hub</a>
+            <a href="#token" class="hover:text-white transition">SERV Token</a>
+            <a href="#roadmap" class="hover:text-white transition">Roadmap</a>
+            <a href="#faq" class="hover:text-white transition">FAQ</a>
+          </div>
+          <a
+            href="#cta"
+            class="rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 px-6 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:scale-105"
+          >
+            Launch Ecosystem
+          </a>
+        </nav>
+      </div>
+    </header>
 
+    <main class="mt-32">
+      <!-- Hero -->
+      <section class="relative overflow-hidden pt-10">
+        <div class="hero-gradient absolute inset-0 -z-10"></div>
+        <div class="bg-grid absolute inset-0 -z-20 opacity-50"></div>
+        <div class="mx-auto flex max-w-7xl flex-col gap-16 px-6 pb-24">
+          <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+            <div class="space-y-8">
+              <span class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300">
+                Web3 Talent · Services · Investors
+              </span>
+              <h1 class="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+                Crypto Serv is the <span class="text-transparent bg-gradient-to-r from-cyan-300 via-sky-400 to-indigo-400 bg-clip-text">all-in-one ecosystem</span>
+                powering the next wave of blockchain ventures.
+              </h1>
+              <p class="max-w-xl text-lg text-slate-300">
+                Connect skilled professionals, vetted service providers, and capital partners through a compliance-first platform
+                where the SERV token fuels incentives, governance, and growth.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="#services"
+                  class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:scale-105"
+                >
+                  Explore the Platform
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="#token"
+                  class="inline-flex items-center gap-2 rounded-full border border-slate-600/60 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-400 hover:text-white"
+                >
+                  Discover SERV Utility
+                </a>
+              </div>
+              <dl class="grid gap-6 sm:grid-cols-3">
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.2em] text-slate-400">Multi-Sided Network</dt>
+                  <dd class="text-2xl font-semibold text-white">4 Personas</dd>
+                </div>
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.2em] text-slate-400">Launch Timeline</dt>
+                  <dd class="text-2xl font-semibold text-white">Q2 2025 MVP</dd>
+                </div>
+                <div>
+                  <dt class="text-xs uppercase tracking-[0.2em] text-slate-400">SERV Token</dt>
+                  <dd class="text-2xl font-semibold text-white">Utility · Governance</dd>
+                </div>
+              </dl>
+            </div>
+            <div class="glass gradient-border relative overflow-hidden rounded-3xl p-8">
+              <div class="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-cyan-500/10 blur-3xl"></div>
+              <div class="absolute -bottom-20 -left-10 h-44 w-44 rounded-full bg-indigo-500/10 blur-3xl"></div>
+              <h2 class="text-2xl font-semibold text-white">Experience Compass</h2>
+              <p class="mt-3 text-sm text-slate-400">
+                A unified platform orchestrating journeys across talent, services, investors, and governance.
+              </p>
+              <div class="mt-10 space-y-6">
+                <div class="flex items-start gap-4">
+                  <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/30 text-lg font-semibold text-indigo-200">1</span>
+                  <div>
+                    <p class="font-semibold text-white">Wallet Identity</p>
+                    <p class="text-sm text-slate-400">Connect wallets, run progressive profiling, and verify compliance in minutes.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/30 text-lg font-semibold text-purple-200">2</span>
+                  <div>
+                    <p class="font-semibold text-white">Personalized Dashboards</p>
+                    <p class="text-sm text-slate-400">Talent, employers, investors, and service providers see tailored insights and actions.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/30 text-lg font-semibold text-cyan-200">3</span>
+                  <div>
+                    <p class="font-semibold text-white">SERV-Powered Outcomes</p>
+                    <p class="text-sm text-slate-400">Staking, rewards, and DAO voting create a feedback loop that accelerates growth.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-10 grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-4">
+                  <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Compliance</p>
+                  <p class="mt-1 text-lg font-semibold text-white">KYC · KYB · AML Ready</p>
+                </div>
+                <div class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-4">
+                  <p class="text-xs uppercase tracking-[0.25em] text-slate-400">Scalability</p>
+                  <p class="mt-1 text-lg font-semibold text-white">Multi-chain & Modular</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid gap-8 rounded-3xl border border-slate-800 bg-slate-900/60 p-8 md:grid-cols-3">
+            <div>
+              <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Mission</p>
+              <p class="mt-3 text-sm text-slate-300">
+                Establish a trusted environment where builders, talent, and investors navigate the Web3 economy with confidence.
+              </p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Differentiators</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                <li>• Compliance-first onboarding.</li>
+                <li>• Certified marketplace and escrow.</li>
+                <li>• SERV tokenized incentives & governance.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Outcome Focus</p>
+              <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                <li>• Reduce hiring friction for crypto ventures.</li>
+                <li>• Accelerate project recovery and compliance.</li>
+                <li>• Unlock curated capital & intelligence.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-   <!-- Header -->
-   <header class="glass-effect sticky top-0 z-50">
-       <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-           <div class="flex items-center space-x-4 space-x-reverse">
-               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#58A6FF]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-               <h1 class="text-2xl font-bold gradient-text">Crypto Serv</h1>
-           </div>
-           <div class="hidden md:flex items-center space-x-8 space-x-reverse text-lg">
-               <a href="#services" class="hover:text-[#58A6FF] transition-colors">خدماتنا</a>
-               <a href="#jobs" class="hover:text-[#58A6FF] transition-colors">الوظائف</a>
-               <a href="#roadmap" class="hover:text-[#58A6FF] transition-colors">خارطة الطريق</a>
-               <a href="#" class="hover:text-[#58A6FF] transition-colors">الورقة البيضاء</a>
-           </div>
-           <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-transform transform hover:scale-105">
-               دخول المنصة
-           </a>
-       </nav>
-   </header>
+      <!-- Services Overview -->
+      <section id="services" class="relative border-t border-slate-800/60 py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="flex flex-col gap-4 text-center">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Platform Stack</p>
+            <h2 class="section-title text-3xl font-semibold text-white sm:text-4xl">
+              <span>Orchestrating every layer of crypto operations</span>
+            </h2>
+            <p class="mx-auto max-w-3xl text-base text-slate-300">
+              Crypto Serv unifies professional hiring, certified service delivery, distressed project rescue, and investor deal rooms under one strategic operating system.
+            </p>
+          </div>
+          <div class="mt-16 grid gap-6 lg:grid-cols-3">
+            <article class="glass gradient-border relative rounded-3xl p-8">
+              <div class="absolute -top-8 left-10 h-16 w-16 rounded-2xl bg-indigo-500/40 blur-xl"></div>
+              <h3 class="text-xl font-semibold text-white">Talent Engine</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                AI-assisted job matching, verifiable credentials, and SERV-backed referral rewards make scaling crypto teams simple.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-300">
+                <li>• Wallet-first identity & resume ingestion.</li>
+                <li>• Role alerts, portfolio showcases, mentorship.</li>
+                <li>• Hiring analytics and pipeline automation.</li>
+              </ul>
+            </article>
+            <article class="glass gradient-border relative rounded-3xl p-8">
+              <div class="absolute -top-8 left-10 h-16 w-16 rounded-2xl bg-purple-500/40 blur-xl"></div>
+              <h3 class="text-xl font-semibold text-white">Services Marketplace</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Curated partners deliver audits, legal, marketing, licensing, and recovery services with milestone-based escrow.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-300">
+                <li>• Intake triage and scoping workflows.</li>
+                <li>• SLA management with automated alerts.</li>
+                <li>• Rating, review, and compliance controls.</li>
+              </ul>
+            </article>
+            <article class="glass gradient-border relative rounded-3xl p-8">
+              <div class="absolute -top-8 left-10 h-16 w-16 rounded-2xl bg-cyan-500/40 blur-xl"></div>
+              <h3 class="text-xl font-semibold text-white">Investor Gateway</h3>
+              <p class="mt-3 text-sm text-slate-300">
+                Token-gated analytics, diligence rooms, and DAO governance align long-term capital with high-quality projects.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-300">
+                <li>• Tiered access tied to SERV staking.</li>
+                <li>• Performance dashboards & risk scoring.</li>
+                <li>• Proposal voting & governance insights.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
 
+      <!-- Talent & Employer Section -->
+      <section id="talent" class="relative overflow-hidden border-t border-slate-800/60 py-24">
+        <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/40 via-transparent to-cyan-900/30"></div>
+        <div class="mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+          <div class="space-y-6">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Talent & Employers</p>
+            <h2 class="section-title text-3xl font-semibold text-white sm:text-4xl">
+              <span>Purpose-built journeys for builders and teams</span>
+            </h2>
+            <p class="text-base text-slate-300">
+              From onboarding to offer acceptance, every step is tailored for crypto-native workflows—signature requests, token-based compensation, and hybrid remote policies included.
+            </p>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="glass rounded-2xl p-6">
+                <h3 class="text-lg font-semibold text-white">Talent Dashboard</h3>
+                <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                  <li>• Match scores & career goals tracker.</li>
+                  <li>• Interview scheduling with timezone intelligence.</li>
+                  <li>• SERV reward vault & staking shortcuts.</li>
+                </ul>
+              </div>
+              <div class="glass rounded-2xl p-6">
+                <h3 class="text-lg font-semibold text-white">Employer Console</h3>
+                <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                  <li>• Multi-role job composer with token perks.</li>
+                  <li>• Application pipeline automation & messaging.</li>
+                  <li>• Compliance health and spending analytics.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="glass gradient-border relative rounded-3xl p-8">
+            <h3 class="text-xl font-semibold text-white">Live Job Snapshots</h3>
+            <div class="mt-6 space-y-4">
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-5">
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-white">Lead Smart Contract Engineer</p>
+                  <span class="rounded-full bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-300">Remote · Full Time</span>
+                </div>
+                <p class="mt-2 text-sm text-slate-400">Metaverse Labs · US / EU · $180k + SERV</p>
+              </div>
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-5">
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-white">Head of Compliance & Licensing</p>
+                  <span class="rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-semibold text-cyan-300">Hybrid · Contract</span>
+                </div>
+                <p class="mt-2 text-sm text-slate-400">Atlas Exchange · Dubai · $120k retainer</p>
+              </div>
+              <div class="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-5">
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-white">Growth Lead · LATAM Launch</p>
+                  <span class="rounded-full bg-purple-500/20 px-3 py-1 text-xs font-semibold text-purple-300">Onsite · Contractor</span>
+                </div>
+                <p class="mt-2 text-sm text-slate-400">Nova Wallet · São Paulo · Performance-based</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-   <!-- Main Content -->
-   <main>
-       <!-- Hero Section -->
-       <section class="py-20 md:py-32 bg-grid-pattern">
-           <div class="container mx-auto px-6 text-center">
-               <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">
-                   <span class="gradient-text">النظام البيئي المتكامل</span>
-                   <br />
-                   لخدمات العملات الرقمية
-               </h2>
-               <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-gray-400">
-                   نحن نبني الجسر بين المواهب، المشاريع، والمستثمرين في عالم البلوكتشين من خلال منصة موحدة تقدم حلولاً احترافية وموثوقة.
-               </p>
-               <div class="mt-10">
-                   <a href="#services" class="glow-button bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all transform hover:scale-105 inline-block">
-                       اكتشف خدماتنا
-                   </a>
-               </div>
-           </div>
-       </section>
+      <!-- SERV Token Utility -->
+      <section id="token" class="border-t border-slate-800/60 py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="grid gap-16 lg:grid-cols-2">
+            <div class="space-y-6">
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-400">SERV Utility</p>
+              <h2 class="section-title text-3xl font-semibold text-white sm:text-4xl">
+                <span>The heartbeat of the Crypto Serv economy</span>
+              </h2>
+              <p class="text-base text-slate-300">
+                SERV aligns incentives across every persona—powering access, rewarding contributions, and anchoring governance with transparent economics.
+              </p>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="glass rounded-2xl p-6">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Access</p>
+                  <p class="mt-2 text-lg font-semibold text-white">Stake-to-unlock tiers</p>
+                  <p class="mt-2 text-sm text-slate-300">Higher SERV stakes unlock investor data rooms, premium hiring tools, and advanced analytics.</p>
+                </div>
+                <div class="glass rounded-2xl p-6">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Rewards</p>
+                  <p class="mt-2 text-lg font-semibold text-white">Ecosystem incentives</p>
+                  <p class="mt-2 text-sm text-slate-300">Earn SERV for referrals, verified engagements, governance participation, and educational milestones.</p>
+                </div>
+                <div class="glass rounded-2xl p-6">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Commerce</p>
+                  <p class="mt-2 text-lg font-semibold text-white">Escrow & settlement</p>
+                  <p class="mt-2 text-sm text-slate-300">SERV is the default currency for marketplace escrow, milestone releases, and loyalty discounts.</p>
+                </div>
+                <div class="glass rounded-2xl p-6">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Governance</p>
+                  <p class="mt-2 text-lg font-semibold text-white">Proposal & voting power</p>
+                  <p class="mt-2 text-sm text-slate-300">Delegated voting plus quadratic weighting keeps decision-making transparent and inclusive.</p>
+                </div>
+              </div>
+            </div>
+            <div class="glass gradient-border rounded-3xl p-8">
+              <h3 class="text-xl font-semibold text-white">Token Economics Snapshot</h3>
+              <div class="mt-6 grid gap-6 sm:grid-cols-2">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Total Supply</p>
+                  <p class="mt-2 text-2xl font-semibold text-white">1,000,000,000 SERV</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Initial Circulation</p>
+                  <p class="mt-2 text-2xl font-semibold text-white">18%</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Community Treasury</p>
+                  <p class="mt-2 text-2xl font-semibold text-white">30%</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">Staking Rewards</p>
+                  <p class="mt-2 text-2xl font-semibold text-white">22%</p>
+                </div>
+              </div>
+              <div class="mt-8 rounded-2xl border border-slate-700/60 bg-slate-900/70 p-6">
+                <p class="text-sm text-slate-300">
+                  Vesting is enforced on-chain via audited smart contracts with quarterly transparency reports. DAO proposals can adjust emissions through timelocked parameters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- Roadmap -->
+      <section id="roadmap" class="border-t border-slate-800/60 py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="flex flex-col gap-4 text-center">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-400">Roadmap</p>
+            <h2 class="section-title text-3xl font-semibold text-white sm:text-4xl">
+              <span>Shipping milestones that compound ecosystem value</span>
+            </h2>
+          </div>
+          <div class="mt-16 grid gap-8 lg:grid-cols-4">
+            <div class="glass rounded-3xl p-6 text-left">
+              <p class="text-xs uppercase tracking-[0.3em] text-indigo-300">Phase 0 · Q4 2024</p>
+              <h3 class="mt-2 text-lg font-semibold text-white">Foundations</h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                <li>• Brand, legal, compliance frameworks.</li>
+                <li>• SERV contract architecture.</li>
+                <li>• Core team and partner onboarding.</li>
+              </ul>
+            </div>
+            <div class="glass rounded-3xl p-6 text-left">
+              <p class="text-xs uppercase tracking-[0.3em] text-purple-300">Phase 1 · Q2 2025</p>
+              <h3 class="mt-2 text-lg font-semibold text-white">MVP Launch</h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                <li>• Talent hub and employer console.</li>
+                <li>• Marketplace with escrow payments.</li>
+                <li>• Admin analytics and reporting.</li>
+              </ul>
+            </div>
+            <div class="glass rounded-3xl p-6 text-left">
+              <p class="text-xs uppercase tracking-[0.3em] text-cyan-300">Phase 2 · Q4 2025</p>
+              <h3 class="mt-2 text-lg font-semibold text-white">Growth</h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                <li>• Investor network & diligence rooms.</li>
+                <li>• Recovery desk automation.</li>
+                <li>• Localization & mobile apps.</li>
+              </ul>
+            </div>
+            <div class="glass rounded-3xl p-6 text-left">
+              <p class="text-xs uppercase tracking-[0.3em] text-emerald-300">Phase 3 · 2026+</p>
+              <h3 class="mt-2 text-lg font-semibold text-white">Scale</h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                <li>• DAO governance activation.</li>
+                <li>• Institutional compliance suite.</li>
+                <li>• Global ecosystem partnerships.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-       <!-- Services Section -->
-       <section id="services" class="py-20">
-           <div class="container mx-auto px-6">
-               <div class="text-center mb-12">
-                   <h3 class="text-4xl font-bold gradient-text">حلولنا المبتكرة</h3>
-                   <p class="text-lg text-gray-400 mt-2">مجموعة متكاملة من الخدمات لدعم نمو مشروعك في كل مرحلة.</p>
-               </div>
-               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                   <!-- Service Card 1 -->
-                   <div class="feature-card glass-effect rounded-xl p-6 border-2 border-transparent transition-all duration-300">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-4 border border-gray-700">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
-                       </div>
-                       <h4 class="text-2xl font-bold mb-2">منصة التوظيف</h4>
-                       <p class="text-gray-400">نوصل الشركات بأفضل المواهب المتخصصة في البلوكتشين والكريبتو.</p>
-                   </div>
-                   <!-- Service Card 2 -->
-                   <div class="feature-card glass-effect rounded-xl p-6 border-2 border-transparent transition-all duration-300">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-4 border border-gray-700">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A371F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                       </div>
-                       <h4 class="text-2xl font-bold mb-2">شهادات الجودة</h4>
-                       <p class="text-gray-400">نمنح شهادة موثوقية للمشاريع لزيادة ثقة المستثمرين والمنصات بها.</p>
-                   </div>
-                   <!-- Service Card 3 -->
-                   <div class="feature-card glass-effect rounded-xl p-6 border-2 border-transparent transition-all duration-300">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-4 border border-gray-700">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                       </div>
-                       <h4 class="text-2xl font-bold mb-2">المساعدة في التراخيص</h4>
-                       <p class="text-gray-400">نوجه المشاريع للحصول على التراخيص اللازمة للعمل في المراكز المالية الرئيسية.</p>
-                   </div>
-                    <!-- Service Card 4 -->
-                   <div class="feature-card glass-effect rounded-xl p-6 border-2 border-transparent transition-all duration-300">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-4 border border-gray-700">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A371F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-                       </div>
-                       <h4 class="text-2xl font-bold mb-2">دعم المشاريع المتعثرة</h4>
-                       <p class="text-gray-400">نقدم خطط إنقاذ متكاملة تشمل الدعم المادي وإعادة الهيكلة والتسويق.</p>
-                   </div>
-                    <!-- Service Card 5 -->
-                   <div class="feature-card glass-effect rounded-xl p-6 border-2 border-transparent transition-all duration-300">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-4 border border-gray-700">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                       </div>
-                       <h4 class="text-2xl font-bold mb-2">بطاقة دفع رقمية</h4>
-                       <p class="text-gray-400">بطاقة دفع تتيح للمستخدمين إنفاق عملاتهم الرقمية بسهولة في أي مكان.</p>
-                   </div>
-                    <!-- Service Card 6 -->
-                   <div class="feature-card glass-effect rounded-xl p-6 border-2 border-transparent transition-all duration-300">
-                       <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-800 mb-4 border border-gray-700">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A371F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                       </div>
-                       <h4 class="text-2xl font-bold mb-2">مكافآت وتوزيعات</h4>
-                       <p class="text-gray-400">يحصل حاملو رمز `SERV` على توزيعات مجانية ومكافآت حصرية.</p>
-                   </div>
-               </div>
-           </div>
-       </section>
+      <!-- FAQ -->
+      <section id="faq" class="border-t border-slate-800/60 py-24">
+        <div class="mx-auto max-w-5xl px-6">
+          <div class="text-center">
+            <p class="text-sm uppercase tracking-[0.3em] text-slate-400">FAQ</p>
+            <h2 class="section-title text-3xl font-semibold text-white sm:text-4xl">
+              <span>Answers for teams, talent, and investors</span>
+            </h2>
+          </div>
+          <div class="mt-16 space-y-6">
+            <details class="glass rounded-2xl p-6">
+              <summary class="cursor-pointer text-lg font-semibold text-white">
+                How does Crypto Serv ensure trust across the marketplace?
+              </summary>
+              <p class="mt-4 text-sm text-slate-300">
+                All service providers undergo due diligence, including KYB, proof-of-work validation, and reference checks. Engagements are underpinned by smart-contract escrow, milestone approvals, and audit trails accessible to both parties.
+              </p>
+            </details>
+            <details class="glass rounded-2xl p-6">
+              <summary class="cursor-pointer text-lg font-semibold text-white">
+                Can teams integrate existing HR or CRM systems?
+              </summary>
+              <p class="mt-4 text-sm text-slate-300">
+                Yes. REST and GraphQL APIs expose job postings, candidate data, and engagement statuses. Webhooks synchronize offer letters, invoice events, and KYC results with external systems.
+              </p>
+            </details>
+            <details class="glass rounded-2xl p-6">
+              <summary class="cursor-pointer text-lg font-semibold text-white">
+                What networks will SERV operate on?
+              </summary>
+              <p class="mt-4 text-sm text-slate-300">
+                SERV launches on an EVM-compatible mainnet with bridges to low-cost L2s for staking and reward distribution. Governance votes determine future multi-chain expansions.
+              </p>
+            </details>
+            <details class="glass rounded-2xl p-6">
+              <summary class="cursor-pointer text-lg font-semibold text-white">
+                How are distressed projects supported?
+              </summary>
+              <p class="mt-4 text-sm text-slate-300">
+                The Recovery Desk pairs projects with legal, financial, and technical experts. Structured playbooks guide assessments, creditor negotiations, and relaunch strategies with SERV-backed incentives for successful turnarounds.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
 
+      <!-- Call To Action -->
+      <section id="cta" class="relative overflow-hidden border-t border-slate-800/60 py-24">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-purple-900/70 to-slate-900/80"></div>
+        <div class="mx-auto max-w-5xl px-6">
+          <div class="relative glass rounded-3xl px-8 py-12 text-center">
+            <div class="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl"></div>
+            <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+              Build the connective tissue for the global crypto economy.
+            </h2>
+            <p class="mt-4 text-base text-slate-200">
+              Join the founding cohort of talent, partners, and investors bringing Crypto Serv to life. Request early access and shape the roadmap alongside the community.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+              <a
+                href="mailto:hello@cryptoserv.io"
+                class="inline-flex items-center gap-2 rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-white"
+              >
+                Request Partnership Deck
+              </a>
+              <a
+                href="#"
+                class="inline-flex items-center gap-2 rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                Download Lightpaper
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-       <!-- Job Platform Preview -->
-       <section id="jobs" class="py-20 bg-[#161B22]">
-           <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                   <h3 class="text-4xl font-bold gradient-text">بوابة الفرص الوظيفية</h3>
-                   <p class="text-lg text-gray-400 mt-2">اكتشف فرصتك القادمة في عالم الويب 3.0.</p>
-               </div>
-               <div class="max-w-4xl mx-auto">
-                   <!-- Search Bar -->
-                   <div class="flex mb-8 glass-effect p-2 rounded-lg">
-                       <input type="text" placeholder="ابحث عن وظيفة (مثلاً: مطور بلوكتشين)" class="w-full bg-transparent p-3 focus:outline-none">
-                       <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md">بحث</button>
-                   </div>
-                   <!-- Job Listings -->
-                   <div class="space-y-4">
-                       <!-- Job Item 1 -->
-                       <div class="glass-effect p-6 rounded-lg flex flex-col md:flex-row justify-between items-center transition hover:border-blue-500 border border-transparent">
-                           <div>
-                               <h4 class="text-xl font-bold text-white">مطور عقود ذكية (Solidity)</h4>
-                               <p class="text-gray-400">شركة TechChain - عن بعد</p>
-                           </div>
-                           <div class="mt-4 md:mt-0">
-                               <span class="bg-green-900 text-green-300 text-sm font-medium mr-2 px-3 py-1 rounded-full">دوام كامل</span>
-                               <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-5 rounded-md ml-4 transition-colors">تقديم</a>
-                           </div>
-                       </div>
-                       <!-- Job Item 2 -->
-                       <div class="glass-effect p-6 rounded-lg flex flex-col md:flex-row justify-between items-center transition hover:border-blue-500 border border-transparent">
-                           <div>
-                               <h4 class="text-xl font-bold text-white">مدير تسويق لمشروع NFT</h4>
-                               <p class="text-gray-400">Crypto Art Inc. - دبي, الإمارات</p>
-                           </div>
-                           <div class="mt-4 md:mt-0">
-                               <span class="bg-yellow-900 text-yellow-300 text-sm font-medium mr-2 px-3 py-1 rounded-full">عقد مؤقت</span>
-                               <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-5 rounded-md ml-4 transition-colors">تقديم</a>
-                           </div>
-                       </div>
-                        <!-- Job Item 3 -->
-                       <div class="glass-effect p-6 rounded-lg flex flex-col md:flex-row justify-between items-center transition hover:border-blue-500 border border-transparent">
-                           <div>
-                               <h4 class="text-xl font-bold text-white">محلل أمان بلوكتشين</h4>
-                               <p class="text-gray-400">SecureBlock - عن بعد</p>
-                           </div>
-                           <div class="mt-4 md:mt-0">
-                               <span class="bg-green-900 text-green-300 text-sm font-medium mr-2 px-3 py-1 rounded-full">دوام كامل</span>
-                               <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-5 rounded-md ml-4 transition-colors">تقديم</a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </section>
-
-
-
-
-       <!-- Roadmap Section -->
-       <section id="roadmap" class="py-20">
-           <div class="container mx-auto px-6">
-               <div class="text-center mb-16">
-                   <h3 class="text-4xl font-bold gradient-text">خارطة طريقنا نحو المستقبل</h3>
-                   <p class="text-lg text-gray-400 mt-2">خطواتنا المنهجية لتحقيق رؤيتنا الطموحة.</p>
-               </div>
-               <div class="relative max-w-2xl mx-auto">
-                   <div class="absolute right-4 top-0 h-full w-0.5 bg-gray-700"></div>
-                   <!-- Timeline Item 1 -->
-                   <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                       <div class="order-1 w-5/12"></div>
-                       <div class="order-1 w-5/12 timeline-item relative pr-8">
-                           <p class="text-sm font-medium text-blue-400">الربع الرابع 2025</p>
-                           <h4 class="mb-3 font-bold text-lg md:text-xl">التأسيس والإعداد</h4>
-                           <p class="text-sm leading-snug tracking-wide text-gray-400">
-                               تكوين الفريق، التأسيس القانوني، وتطوير العقد الذكي للمشروع.
-                           </p>
-                       </div>
-                   </div>
-                   <!-- Timeline Item 2 -->
-                   <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                       <div class="order-1 w-5/12"></div>
-                       <div class="order-1 w-5/12 timeline-item relative pr-8">
-                          <p class="text-sm font-medium text-blue-400">الربع الثاني 2026</p>
-                          <h4 class="mb-3 font-bold text-lg md:text-xl">التطوير والإطلاق التجريبي</h4>
-                          <p class="text-sm leading-snug tracking-wide text-gray-400">
-                              برمجة المنصة والتطبيق، وإطلاق نسخة تجريبية للمستخدمين الأوائل.
-                          </p>
-                       </div>
-                   </div>
-                   <!-- Timeline Item 3 -->
-                    <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                       <div class="order-1 w-5/12"></div>
-                       <div class="order-1 w-5/12 timeline-item relative pr-8">
-                          <p class="text-sm font-medium text-blue-400">الربع الثالث 2026</p>
-                          <h4 class="mb-3 font-bold text-lg md:text-xl">الإطلاق الرسمي والنمو</h4>
-                          <p class="text-sm leading-snug tracking-wide text-gray-400">
-                              إطلاق الرمز (`TGE`)، البيع العام، والإدراج في المنصات.
-                          </p>
-                       </div>
-                   </div>
-                    <!-- Timeline Item 4 -->
-                    <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                       <div class="order-1 w-5/12"></div>
-                       <div class="order-1 w-5/12 timeline-item relative pr-8">
-                          <p class="text-sm font-medium text-blue-400">2027</p>
-                          <h4 class="mb-3 font-bold text-lg md:text-xl">التوسع في الخدمات</h4>
-                          <p class="text-sm leading-snug tracking-wide text-gray-400">
-                              إطلاق خدمات شهادات الجودة، المساعدة في التراخيص، وبطاقة الدفع الرقمية.
-                          </p>
-                       </div>
-                   </div>
-                    <!-- Timeline Item 5 -->
-                    <div class="flex justify-between items-center w-full right-timeline">
-                       <div class="order-1 w-5/12"></div>
-                       <div class="order-1 w-5/12 timeline-item relative pr-8">
-                          <p class="text-sm font-medium text-blue-400">2028 وما بعدها</p>
-                          <h4 class="mb-3 font-bold text-lg md:text-xl">النضج وتكامل النظام</h4>
-                          <p class="text-sm leading-snug tracking-wide text-gray-400">
-                              تفعيل جميع الخدمات، توسيع الشراكات العالمية، وتطبيق نظام الحوكمة (DAO).
-                          </p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </section>
-   </main>
-
-
-   <!-- Footer -->
-   <footer class="bg-[#161B22] border-t border-gray-800">
-       <div class="container mx-auto px-6 py-8">
-           <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#58A6FF]"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                   <h1 class="text-xl font-bold gradient-text">Crypto Serv</h1>
-               </div>
-               <p class="text-gray-400 mt-4 md:mt-0">
-                   &copy; 2025 Crypto Serv. جميع الحقوق محفوظة.
-               </p>
-               <div class="flex space-x-4 space-x-reverse mt-4 md:mt-0">
-                   <a href="#" class="text-gray-400 hover:text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a>
-                   <a href="#" class="text-gray-400 hover:text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5,4.1c0,0-2.2,0.4-3,0.5c-0.3,1.4-1.2,2.5-2.2,2.8c-0.8,0.2-1.2,0.2-1.2,0.2s0,0.1,0.1,0.1c1,0.3,1.5,1,1.5,1 c0,0.1-0.1,0.6-0.2,1.2c-0.2,0.8-0.5,1.7-1,2.5c-1.2,2.3-3.2,3.9-6.2,4.3c0,0-0.2,0-0.3,0c-1,0-2.3-0.5-3.3-1.4 c-0.2-0.2-0.3-0.3-0.3-0.4c0-0.1,0.1-0.2,0.1-0.2c0.2-0.1,0.5-0.2,0.7-0.3c0.1,0,0.2,0,0.2,0c0.8,0.9,1.9,1.2,2.8,1 c0,0,0.1-0.1,0.2-0.1c0,0,0-0.1-0.1-0.2c-1.3-0.5-2.2-1.4-2.8-3.1C5,13,5,12,5.1,11.2c0.1-0.8,0.3-1.5,0.7-2.1 c0.5-0.8,1.2-1.5,2-2c0.7-0.5,1.5-0.8,2.2-0.9c0.2,0,0.3,0,0.4,0c0.3,0,0.7,0.1,1.1,0.2c-0.1-0.4-0.3-1.1-0.3-1.5 c0-0.9,0.5-1.6,1.4-2c0.5-0.2,1-0.2,1.5-0.1c0.1,0,0.2,0.1,0.3,0.1c-0.2-0.1-0.4-0.1-0.5,0c-0.4,0.1-0.8,0.3-1,0.8 c-0.1,0.2,0,0.4,0,0.5c0.1,0.3,0.2,0.6,0.4,0.8c0.2,0.3,0.5,0.5,0.8,0.6c0.4,0.1,0.8,0,1.2-0.1c0.1,0,0.2,0,0.2-0.1 C21,4.2,21.5,4.1,21.5,4.1z M17,13.8c0,0.3-0.1,0.6-0.3,1c-0.2,0.3-0.5,0.6-0.8,0.8c-0.7,0.5-1.5,0.7-2.3,0.5 c-0.1,0-0.2,0.1-0.2,0.1c-0.5,1-1.3,1.7-2.3,2.1c-0.5,0.2-1,0.3-1.5,0.2c-0.9-0.1-1.7-0.6-2.3-1.4c-0.1-0.1-0.2-0.2-0.3-0.2 c-0.1,0-0.1,0.1-0.1,0.1c-0.3,0.5-0.8,0.9-1.3,1.1c-0.1,0-0.1,0-0.2,0c-0.5-0.1-1-0.4-1.4-0.8c-0.1-0.1-0.2-0.2-0.2-0.3 c0-0.1,0-0.2,0.1-0.3c0.1-0.1,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2,0.1c0.2,0.3,0.6,0.6,1,0.7c0.6,0.2,1.2,0.1,1.8-0.3 c0.1,0,0.2-0.1,0.2-0.1c0-0.1,0-0.1-0.1-0.2c-0.4-0.5-0.6-1.1-0.7-1.7c-0.1-0.7-0.1-1.4,0.2-2c0-0.1,0.1-0.1,0.1-0.2 c0,0,0,0,0,0c-1-0.4-1.8-1-2.4-1.8c-0.5-0.6-0.8-1.3-0.9-2.1c-0.1-0.8-0.1-1.7,0.3-2.5c0-0.1,0.1-0.1,0.1-0.2 c-0.1-0.1-0.1-0.2,0-0.2c0.1-0.1,0.2-0.1,0.3-0.1c1.2,0.1,2.3,0.7,3.1,1.8c0.1,0.1,0.1,0.2,0.2,0.2c0.1,0,0.1-0.1,0.1-0.2 c0-0.5-0.1-1-0.3-1.4c-0.3-0.8-1-1.2-1.8-1.2c-0.1,0-0.2,0-0.3,0c0.1,0,0.1,0,0.2,0c-0.3-0.1-0.7-0.1-1,0.1 c-0.8,0.3-1.2,1-1.2,1.8c0,0.5,0.1,1.1,0.4,1.6c0,0.1,0,0.2,0,0.2C8.7,9,8.7,9,8.6,9C7.8,8.2,6.7,7.7,5.6,7.6 c-0.1,0-0.2,0-0.2-0.1C5.6,7.5,5.7,7.4,5.7,7.4c0.5-0.4,1-0.9,1.4-1.5c0.6-1,0.8-2,0.7-3c0-0.1,0-0.2-0.1-0.2 c0.1-0.1,0.1-0.1,0.2-0.1c0.1,0,0.3,0,0.4,0c2.3,0.3,4,2.1,4,4.2c0,0.1,0,0.2,0,0.3c0,0,0.1,0,0.1,0c0.4-0.1,0.8-0.2,1.2-0.2 c0.1,0,0.2,0,0.2,0c0-0.1-0.1-0.1-0.1-0.2c-0.2-0.4-0.2-0.9,0-1.3c0.3-0.6,0.8-1,1.4-1c0.1,0,0.2,0,0.3,0 c-0.1,0-0.1,0-0.2,0c0.3,0,0.7,0,1,0.2c0.7,0.3,1.1,0.9,1,1.7c0,0.4-0.2,0.9-0.4,1.3c0,0.1,0,0.2,0.1,0.2c0,0,0.1,0,0.1,0 c0.8-0.2,1.7-0.2,2.5,0c0.1,0,0.2,0,0.2,0.1c0,0.1,0,0.1-0.1,0.2c-0.1,0.1-0.2,0.1-0.2,0.1c-0.1,0-0.2-0.1-0.2-0.1 c-0.6-0.1-1.2-0.1-1.8,0.1c-0.8,0.2-1.5,0.7-2,1.4c-0.1,0.1-0.1,0.2-0.1,0.3c0,0.1,0,0.2,0.1,0.2c0.2,0.1,0.5,0.1,0.7,0 c0.1,0,0.2,0,0.2,0.1c0.6,1,0.8,2,0.6,3c-0.1,0.8-0.5,1.5-1,2.1c-0.1,0.1-0.1,0.2-0.1,0.2c0,0.1,0,0.1,0.1,0.2 c0.1,0,0.2,0,0.2-0.1c0.4-0.4,0.9-0.7,1.4-0.9c0.7-0.2,1.4-0.2,2.1-0.1c0.1,0,0.2,0,0.2-0.1c0.4,1.1,0.3,2.3-0.3,3.3 C17.2,13.7,17.1,13.8,17,13.8z"></path></svg></a>
-                   <a href="#" class="text-gray-400 hover:text-white"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9.78,18.24c-0.28,0-0.5-0.22-0.5-0.5V14.07c0-0.28,0.22-0.5,0.5-0.5h1.25c0.28,0,0.5,0.22,0.5,0.5v3.67 c0,0.28-0.22,0.5-0.5,0.5H9.78z M11.03,12.13c-0.94,0-1.7-0.76-1.7-1.7s0.76-1.7,1.7-1.7s1.7,0.76,1.7,1.7S11.97,12.13,11.03,12.13z M15.28,18.24h-1.25c-0.28,0-0.5-0.22-0.5-0.5v-2.1c0-0.8-0.64-1.44-1.44-1.44c-0.6,0-1.09,0.4-1.27,0.94 c-0.05,0.15-0.07,0.3-0.07,0.45v2.15c0,0.28-0.22,0.5-0.5,0.5H9.78c-0.28,0-0.5-0.22-0.5-0.5V9.78c0-0.28,0.22-0.5,0.5-0.5h1.25 c0.28,0,0.5,0.22,0.5,0.5v0.38c0.48-0.71,1.29-1.17,2.19-1.17c1.54,0,2.77,1.24,2.77,2.77V17.74C15.78,18.02,15.56,18.24,15.28,18.24 z M18.53,3H5.47C4.11,3,3,4.11,3,5.47v13.06C3,19.89,4.11,21,5.47,21h13.06c1.36,0,2.47-1.11,2.47-2.47V5.47 C21,4.11,19.89,3,18.53,3z"></path></svg></a>
-               </div>
-           </div>
-       </div>
-   </footer>
-
-
-
-
-<script>
-   // Smooth scrolling for anchor links
-   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-       anchor.addEventListener('click', function (e) {
-           e.preventDefault();
-           document.querySelector(this.getAttribute('href')).scrollIntoView({
-               behavior: 'smooth'
-           });
-       });
-   });
-</script>
-
-
-</body>
+    <footer class="border-t border-slate-800/60 bg-slate-950/80 py-10">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/80">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-6 w-6 text-indigo-300"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21c4.97 0 9-2.91 9-6.5S16.97 8 12 8s-9 2.91-9 6.5c0 1.79 1.2 3.4 3.12 4.57C4.05 19.12 3 20.44 3 22c1.55 0 2.86-1.05 3.93-3.12C8.6 19.8 10.24 20.3 12 20.3Z"
+              />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm uppercase tracking-[0.25em] text-slate-400">Crypto Serv</p>
+            <p class="text-base font-semibold text-white">The All-in-One Crypto Services Ecosystem</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+          <span>© 2025 Crypto Serv. All rights reserved.</span>
+          <a href="#" class="hover:text-white transition">Privacy</a>
+          <a href="#" class="hover:text-white transition">Terms</a>
+          <a href="#" class="hover:text-white transition">Brand Kit</a>
+        </div>
+        <div class="flex items-center gap-3 text-slate-400">
+          <a href="#" class="hover:text-white transition" aria-label="X">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+              <path d="M17.53 3H20.5l-7.5 9.56L20.84 21h-5.58l-4.38-5.73L6.1 21H3.11l7.93-10.11L3 3h5.7l4 5.29L17.53 3Z" />
+            </svg>
+          </a>
+          <a href="#" class="hover:text-white transition" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+              <path d="M20.45 20.45h-3.55v-5.28c0-1.26-.03-2.87-1.75-2.87-1.75 0-2.02 1.36-2.02 2.78v5.37H9.58V9h3.41v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5v6.24ZM5.34 7.43a2.06 2.06 0 1 1 0-4.11 2.06 2.06 0 0 1 0 4.11ZM3.57 20.45h3.55V9H3.57v11.45Z" />
+            </svg>
+          </a>
+          <a href="#" class="hover:text-white transition" aria-label="Discord">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+              <path d="M20.32 4.37A17.53 17.53 0 0 0 16.53 3l-.2.42a16.06 16.06 0 0 1 3.85 1.37c-3.7-1.74-7.6-1.74-11.26 0a16.34 16.34 0 0 1 3.87-1.37L12.58 3a17.32 17.32 0 0 0-3.77 1.37C5.27 6.67 4.3 9.76 4.57 12.8a13 13 0 0 0 3.96 2l.44-.73a10.16 10.16 0 0 1-1.77-.86l.22-.15a7.56 7.56 0 0 0 9.16 0l.22.15a10.16 10.16 0 0 1-1.77.86l.44.73a13 13 0 0 0 3.96-2c.33-3.31-.43-6.39-2.11-8.58ZM9.43 14.52c-.88 0-1.6-.8-1.6-1.77s.7-1.78 1.6-1.78c.9 0 1.62.8 1.62 1.78s-.72 1.77-1.62 1.77Zm5.14 0c-.88 0-1.6-.8-1.6-1.77s.7-1.78 1.6-1.78c.9 0 1.62.8 1.62 1.78s-.72 1.77-1.62 1.77Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
