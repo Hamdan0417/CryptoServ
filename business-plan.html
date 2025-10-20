@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Serv | Business Plan & Whitepaper</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', sans-serif;
+        background: radial-gradient(circle at top, rgba(99, 102, 241, 0.12), transparent 55%),
+          radial-gradient(circle at bottom, rgba(14, 165, 233, 0.1), transparent 45%), #030712;
+        color: #f8fafc;
+      }
+      .glass {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        backdrop-filter: blur(14px);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div
+      id="password-overlay"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95"
+    >
+      <div class="glass w-full max-w-md rounded-3xl p-10 shadow-2xl">
+        <div class="mb-6 space-y-2 text-center">
+          <h1 class="text-2xl font-bold text-white">Protected Document</h1>
+          <p class="text-sm text-slate-300">
+            Please enter the password to access the Crypto Serv business plan.
+          </p>
+        </div>
+        <label for="password-input" class="block text-sm font-semibold text-slate-200">
+          Password
+        </label>
+        <input
+          id="password-input"
+          type="password"
+          class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/40"
+          placeholder="Enter password"
+          autocomplete="off"
+        />
+        <p
+          id="password-error"
+          class="mt-3 hidden text-sm font-medium text-rose-400"
+        >
+          Incorrect password. Please try again.
+        </p>
+        <button
+          id="password-submit"
+          class="mt-6 w-full rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 transition hover:scale-[1.02]"
+          type="button"
+        >
+          Unlock Document
+        </button>
+      </div>
+    </div>
+
+    <main id="protected-content" class="hidden pb-24">
+      <header class="border-b border-slate-800/60 bg-slate-950/50 py-16">
+        <div class="mx-auto max-w-5xl px-6">
+          <p class="text-xs uppercase tracking-[0.35em] text-cyan-300/70">Confidential</p>
+          <h1 class="mt-4 text-4xl font-extrabold text-white">
+            Crypto Serv – Expanded Business Plan &amp; Whitepaper (v1.1)
+          </h1>
+          <div class="mt-6 space-y-2 text-sm text-slate-300">
+            <p><strong>Planned Start Date:</strong> 15 November 2025</p>
+            <p>
+              <strong>Scope:</strong> A complete, end-to-end plan covering strategy, product, technology,
+              security, legal/compliance, operations, organization, finance, and a precise roadmap with dates
+              and gates, plus an updated whitepaper.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <div class="mx-auto mt-16 flex max-w-5xl flex-col gap-16 px-6 text-slate-200">
+        <section id="executive-summary" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">1) Executive Summary</h2>
+          <div class="space-y-3 text-sm leading-relaxed">
+            <p>
+              <strong>Vision:</strong> Build the most trusted, integrated service infrastructure for builders, companies,
+              and investors in digital assets.
+            </p>
+            <p>
+              <strong>Mission:</strong> Operate a unified services platform backed by the <strong>SERV</strong> token, delivering
+              specialist hiring, quality assurance and certifications, advisory, licensing support, project rescue, listing
+              facilitation, and a loyalty/rewards program.
+            </p>
+            <p>
+              <strong>Value Proposition:</strong> Reduce market fragmentation with an auditable, standards-driven marketplace
+              and service stack that improves trust, speed, and outcomes.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">
+              Key 12–18-Month Targets
+            </h3>
+            <ul class="mt-3 list-disc space-y-2 pl-6 text-sm leading-relaxed">
+              <li>TGE + first DEX listing in <strong>Q3–Q4 2026</strong>.</li>
+              <li>MVP shipping: (1) Specialist Jobs Marketplace, (2) Loyalty &amp; Airdrops, (3) Advisory.</li>
+              <li>
+                Reach <strong>25k</strong> registered users, <strong>3k</strong> active candidates, <strong>500</strong> hiring companies,
+                <strong>50</strong> projects assessed under the certification program, and <strong>&ge; 2.5m SERV</strong> initial staking TVL.
+              </li>
+              <li>Secure first-line partners: security auditor, KYC/AML provider, and Travel Rule provider.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="market-competition" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">2) Market &amp; Competition</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Customer Segments</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>Web3/Blockchain projects</strong>: need hiring, quality signals, listings, licenses.</li>
+                <li>
+                  <strong>Blockchain professionals</strong>: developers, security engineers, product managers, compliance.
+                </li>
+                <li><strong>Investors/incubators/VCs</strong>: validated deal flow and standardized diligence.</li>
+                <li><strong>Institutional partners</strong>: auditors, payment providers, banks/EMIs.</li>
+              </ul>
+            </div>
+            <p>
+              <strong>Gaps &amp; Pain Points:</strong> talent scarcity and matching, trust deficit, regulatory complexity, fragmented
+              service providers, high risk exposure.
+            </p>
+            <p>
+              <strong>Competitive Landscape (high-level):</strong> generic job boards, tech consultancies, incubators, auditors,
+              listing brokers. <strong>Crypto Serv</strong> integrates these into a single, measurable, token-aligned ecosystem with
+              governance.
+            </p>
+          </div>
+        </section>
+
+        <section id="business-model" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">3) Business Model &amp; Monetization</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Revenue Streams</h3>
+              <ol class="mt-3 list-decimal space-y-2 pl-6">
+                <li>Employer subscriptions (Basic/Pro/Enterprise) + paid job promotions.</li>
+                <li>Take-rate (10–20%) on advisory/contract volume facilitated by the platform.</li>
+                <li>Certification fees for <strong>Crypto Serv Quality Mark (CSQM)</strong> (tiered by project size/risk).</li>
+                <li>Licensing/Compliance enablement (fixed + success fee).</li>
+                <li>Listing facilitation (retainer + success).</li>
+                <li>Staking/Treasury yields earmarked to ecosystem grants per policy.</li>
+                <li>Advertising/placement (CPC/CPI/CPA) with strict quality filters.</li>
+                <li>Card program revenue share (interchange/rebate) post-launch via licensed partners.</li>
+              </ol>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Indicative Pricing (subject to market test)</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Employer subs: <strong>$199 / $499 / $1,999</strong> monthly.</li>
+                <li>CSQM certification: <strong>$5k–$50k</strong> per project based on scope/risk.</li>
+                <li>Licensing/Compliance packs: <strong>$20k–$100k</strong> + success fee.</li>
+                <li>Advisory marketplace: <strong>15%</strong> take-rate.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="corporate-governance" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">4) Corporate Governance &amp; Legal Structure</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Jurisdiction Strategy (by activity)</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>UAE:</strong> ADGM (Abu Dhabi) or VARA (Dubai) for virtual asset service activities (non-custodial advisory/brokerage elements).</li>
+                <li><strong>Bahrain:</strong> CBB sandbox or VA provider categories.</li>
+                <li><strong>Singapore:</strong> MAS/PSA for non-custodial intermediation/tech services.</li>
+                <li><strong>Saudi Arabia:</strong> comply with E-commerce and PDPL; avoid regulated VA activities domestically until a clear framework is available.</li>
+              </ul>
+            </div>
+            <p>
+              <strong>Entity Stack:</strong> HoldCo (BVI/ADGM) + OpCo (ADGM/VARA) + Services/Advisory branch (KSA) + BD entities (Bahrain/Singapore) + future DAO Foundation.
+            </p>
+            <p>
+              <strong>Licensing Posture:</strong> begin <strong>non-custodial</strong>; no exchange/broker-dealer operation by Crypto Serv unless through licensed partners.
+            </p>
+            <p>
+              <strong>Internal Policies:</strong> Board charter, conflicts of interest, insider trading, gifts/hospitality, Risk &amp; Compliance Committee charters.
+            </p>
+          </div>
+        </section>
+
+        <section id="compliance" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">5) Compliance &amp; Regulatory Governance</h2>
+          <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed">
+            <li><strong>KYC/KYB</strong> via third-party (e.g., SumSub/Onfido/Trulioo) with risk scoring.</li>
+            <li><strong>AML/CFT</strong> risk-based program, sanctions screening, transaction monitoring, SAR/STR processes aligned with <strong>FATF</strong>.</li>
+            <li><strong>Travel Rule</strong> integrations (e.g., Notabene/TRISA) where applicable.</li>
+            <li><strong>Banking/fiat rails:</strong> only via licensed partners; segregate client vs treasury funds.</li>
+            <li><strong>Privacy:</strong> GDPR, Saudi <strong>PDPL</strong>, DIFC DP Law; DPA &amp; SCCs with processors; data retention and minimization.</li>
+            <li><strong>Terms/Privacy:</strong> jurisdiction-aware ToS and Privacy Policy; risk disclosures; geofencing restricted jurisdictions.</li>
+            <li><strong>Token classification:</strong> <strong>Utility token</strong> with Howey/MiCA/MAS/SFC analysis; avoid profit promises; separate future DAO governance from financial return language.</li>
+            <li><strong>Offering structure:</strong> SAFT for accredited/eligible investors (e.g., Reg S/Reg D); exclude high-risk jurisdictions.</li>
+            <li>Appoint <strong>MLRO</strong>, <strong>DPO</strong>, and local regulatory counsel.</li>
+          </ul>
+        </section>
+
+        <section id="technical-plan" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">6) Technical Plan (Architecture &amp; SDLC)</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <p><strong>Chain selection:</strong> multi-chain strategy starting with EVM. Compare <strong>BNB / Polygon / Base / Arbitrum</strong>.</p>
+              <ul class="mt-2 list-disc space-y-2 pl-6">
+                <li>Primary criterion: low fees, strong security, toolchain maturity, liquidity, partner ecosystem.</li>
+                <li>Final decision by <strong>Week 6</strong> using a transparent <strong>Decision Matrix</strong>.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Smart Contracts</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Token: <strong>ERC-20</strong> (optionally <strong>ERC-20Votes</strong> later).</li>
+                <li>Patterns: <strong>UUPS/Transparent Proxy</strong>, <strong>AccessControl</strong>, <strong>Pausable</strong>, <strong>ReentrancyGuard</strong>.</li>
+                <li>Modules: Treasury, Staking, Airdrop, Vesting, Governance.</li>
+                <li>Testing: unit + property-based; coverage <strong>&ge;95%</strong>; fuzzing and economic sims.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Backend</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Microservices (Node.js/TypeScript) behind a <strong>GraphQL</strong> gateway.</li>
+                <li>Data: <strong>PostgreSQL</strong> (OLTP), <strong>Redis</strong> (cache/queues), <strong>Elasticsearch</strong> (search).</li>
+                <li>Storage: S3-compatible with server-side encryption.</li>
+                <li>Messaging: Kafka/RabbitMQ (events for KYC, hiring, contracts).</li>
+                <li>Identity &amp; Access: OIDC (Keycloak/Auth0).</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Frontend &amp; UX</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Web (Next.js/React) + Mobile (React Native), i18n (EN/AR).</li>
+                <li>Accessible <strong>Design System</strong> (WCAG 2.1 AA).</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">DevSecOps/SRE</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Infra: managed <strong>Kubernetes</strong> (EKS/AKS/GKE) + IaC (<strong>Terraform</strong>) + GitHub Actions.</li>
+                <li>Security: SAST/DAST, dependency scanning, <strong>SBOM</strong>, image signing (Cosign), <strong>HSM/MPC</strong> for sensitive keys.</li>
+                <li>Observability: OpenTelemetry, Prometheus, Grafana; SLOs (public platform <strong>99.9%</strong> availability); centralized logging.</li>
+                <li>Backup/DR: <strong>RPO ≤ 1h</strong>, <strong>RTO ≤ 4h</strong>; quarterly DR tests.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Security by Design</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>External audits (CertiK/Trail of Bits/Quantstamp), <strong>bug bounty</strong> (Immunefi).</li>
+                <li>Stress tests against MEV/Sybil exploitation for airdrops.</li>
+                <li>Treasury keying via <strong>Gnosis Safe 3-of-5</strong> and/or MPC (Fireblocks/BitGo) per policy.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="product-design" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">7) Product Design (MVP → V1)</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">MVP scope</h3>
+              <ol class="mt-3 list-decimal space-y-4 pl-6">
+                <li>
+                  <strong>Specialist Jobs Marketplace</strong>
+                  <ul class="mt-2 list-disc space-y-1 pl-6">
+                    <li>Verifiable talent profiles (GitHub/API checks; on-chain skill badges).</li>
+                    <li>Job board + rule-based/ML matching.</li>
+                    <li>Employer accounts, billing, subscriptions.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Loyalty &amp; Airdrops</strong>
+                  <ul class="mt-2 list-disc space-y-1 pl-6">
+                    <li>Points accrual from staking and platform activity.</li>
+                    <li>Anti-Sybil: optional higher-tier KYC, one-wallet-per-user, reward caps.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Advisory Marketplace</strong>
+                  <ul class="mt-2 list-disc space-y-1 pl-6">
+                    <li>Expert network (Legal/Tech/Tokenomics/BD); booking; standard contracts; escrow via licensed partner.</li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <p><strong>Beta (Q2–Q3 2026):</strong></p>
+              <ul class="mt-2 list-disc space-y-2 pl-6">
+                <li><strong>CSQM</strong> certification levels (Bronze/Silver/Gold).</li>
+                <li>Certification console: intake → documentation → technical review → leadership interviews → final report + CSQM level → 90-day follow-up.</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>V1 (Q4 2026–Q1 2027):</strong></p>
+              <ul class="mt-2 list-disc space-y-2 pl-6">
+                <li>SERV listed on DEX + initial CEX partnerships.</li>
+                <li>Mobile apps GA.</li>
+                <li>Licensing/compliance services expansion; distressed-project rescue offering.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="tokenomics" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">8) Tokenomics (Refined)</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <p><strong>Name:</strong> Crypto Serv Token (<strong>SERV</strong>)</p>
+            <p><strong>Standard:</strong> ERC-20 (EVM)</p>
+            <p><strong>Max Supply:</strong> <strong>1,000,000,000 SERV</strong> (fixed)</p>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Allocation (revised)</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Public/Initial Sales: <strong>20%</strong></li>
+                <li>Ecosystem &amp; Rewards (staking/loyalty): <strong>32%</strong></li>
+                <li>Team: <strong>12%</strong> (12-month cliff; 24-month linear vest)</li>
+                <li>Advisors: <strong>3%</strong> (6-month cliff; 18-month linear vest)</li>
+                <li>Treasury/Strategic Partnerships: <strong>18%</strong></li>
+                <li>Marketing &amp; Growth: <strong>10%</strong></li>
+                <li>Liquidity &amp; Listings: <strong>5%</strong></li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Treasury Policy:</strong></p>
+              <ul class="mt-2 list-disc space-y-2 pl-6">
+                <li>Initial DEX liquidity target: <strong>5–10%</strong> of raise (50/50 pools).</li>
+                <li>Diversify treasury (stablecoins/BTC/ETH) with risk limits; sub-treasury committee.</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Utility:</strong></p>
+              <ul class="mt-2 list-disc space-y-2 pl-6">
+                <li><strong>Fee discounts</strong> (up to 30%) when paying platform fees in SERV.</li>
+                <li><strong>Staking</strong> to earn loyalty points convertible to airdrops/discounts.</li>
+                <li><strong>Tiered access</strong> for premium jobs, fast-track certifications, investor rooms.</li>
+                <li>Future <strong>governance</strong> (DAO) on parameters (discounts, grants, burn ratios).</li>
+              </ul>
+            </div>
+            <p><strong>Supply Discipline:</strong> no post-mint inflation; optional <strong>fee-burn</strong> (up to 20% of net platform fees) subject to DAO vote.</p>
+          </div>
+        </section>
+
+        <section id="capital-plan" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">9) Capital Plan &amp; Rounds</h2>
+          <div class="space-y-3 text-sm leading-relaxed">
+            <p><strong>Pre-Seed/Seed (Q4 2025–Q1 2026):</strong></p>
+            <ul class="mt-2 list-disc space-y-2 pl-6">
+              <li>Target <strong>$1.5m–$3.0m</strong> (SAFT + SAFE/equity for OpCo).</li>
+              <li>Use: team build-out, audits, core launch, compliance, initial liquidity.</li>
+            </ul>
+            <p><strong>Strategic (Q3–Q4 2026):</strong></p>
+            <ul class="mt-2 list-disc space-y-2 pl-6">
+              <li><strong>$3m–$5m</strong> to scale certification/licensing/BD and first CEX listing.</li>
+            </ul>
+            <p><strong>Investor Relations:</strong> monthly updates, live KPI dashboard, information rights; no token return promises.</p>
+          </div>
+        </section>
+
+        <section id="gtm" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">10) Go-to-Market (GTM)</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Positioning &amp; Messaging</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>Projects/Companies:</strong> “auditable quality + talent + faster licensing/listing.”</li>
+                <li><strong>Talent:</strong> “trusted jobs + rewards + verifiable skills.”</li>
+                <li><strong>Investors:</strong> “standardized quality signals + diligence at scale.”</li>
+              </ul>
+            </div>
+            <p>
+              <strong>Channels:</strong> thought-leadership content, webinars, institutional relations, selective creators, hackathons, university pipelines.
+            </p>
+            <p>
+              <strong>PLG:</strong> in-product referrals, loyalty points, marketplace liquidity flywheel.
+            </p>
+            <p>
+              <strong>Programs:</strong> ambassador guilds, open-source grants (SDK/compliance kits), quarterly market reports.
+            </p>
+            <p>
+              <strong>Metrics:</strong> CAC/LTV, employer activation, candidate quality, certification conversion, beta→paid conversion.
+            </p>
+          </div>
+        </section>
+
+        <section id="partnerships" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">11) Partnerships &amp; Vendors</h2>
+          <div class="space-y-3 text-sm leading-relaxed">
+            <ul class="list-disc space-y-2 pl-6">
+              <li><strong>Security audit:</strong> CertiK / Trail of Bits / Quantstamp (RFP Week 7; sign by Week 10).</li>
+              <li><strong>KYC/KYB:</strong> SumSub / Onfido / Trulioo.</li>
+              <li><strong>Chain analytics:</strong> TRM Labs / Chainalysis to support CEX diligence.</li>
+              <li><strong>Travel Rule:</strong> Notabene / TRISA.</li>
+              <li><strong>Custody/Keys:</strong> Gnosis Safe; Fireblocks/BitGo for treasury.</li>
+              <li><strong>Fiat On/Off &amp; Card:</strong> European/UK <strong>EMI</strong> partner; white-label program manager.</li>
+              <li><strong>Infra:</strong> AWS/GCP + Cloudflare.</li>
+            </ul>
+            <p class="text-xs italic text-slate-400">
+              Principle: Only perform regulated activities through licensed partners/entities in the relevant jurisdictions.
+            </p>
+          </div>
+        </section>
+
+        <section id="org-design" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">12) Org Design &amp; Internal Governance</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <p>
+              <strong>Core Team:</strong> CEO, CTO, CPO, CFO, GC/Head of Legal, VP Compliance/MLRO, VP Engineering, Head of Security, Head of Product,
+              Head of BD/Partnerships, Head of Marketing, Head of Community, Head of Customer Success.
+            </p>
+            <p><strong>Committees:</strong> Risk &amp; Compliance, Information Security, Treasury.</p>
+            <p>
+              <strong>Programs:</strong> ISO 27001 readiness; <strong>SOC 2 Type I</strong> within 12–18 months; quarterly permission reviews; least-privilege access.
+            </p>
+          </div>
+        </section>
+
+        <section id="operational-runbooks" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">13) Operational Runbooks</h2>
+          <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed">
+            <li><strong>User/Company Onboarding:</strong> verification → ToS acceptance → risk assessment → tiering.</li>
+            <li><strong>CSQM Certification:</strong> intake → documentary review → technical due diligence → leadership interviews → scoring → issuance → 90-day check.</li>
+            <li><strong>Distressed Project Rescue:</strong> 2–4-week diagnosis; 90-day plan with OKRs; interim governance if needed.</li>
+            <li><strong>Exchange Listings:</strong> DD pack, AML screens, liquidity coordination, comms plan.</li>
+            <li><strong>Incident Response:</strong> P0/P1/P2 classification; war-room channels; <strong>P0 ≤ 15 min</strong> response; post-mortem within 72h.</li>
+          </ul>
+        </section>
+
+        <section id="risk-management" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">14) Risk Management</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <p>
+              <strong>Categories:</strong> regulatory, contractual/legal, cyber, operational, reputational, market/liquidity, smart-contract, fraud/Sybil, third-party.
+            </p>
+            <p>
+              <strong>Controls:</strong> strong access controls, 4-eyes for treasury, professional/management liability cover, semi-annual pen-testing, DEX liquidity exposure limits, strict environment separation.
+            </p>
+            <p>
+              <strong>Risk Appetite:</strong> probability/impact matrix, escalation thresholds, board-approved tolerances.
+            </p>
+          </div>
+        </section>
+
+        <section id="kpis-okrs" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">15) KPIs &amp; OKRs</h2>
+          <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed">
+            <li><strong>User growth:</strong> registrations, MAU/WAU, active employers.</li>
+            <li><strong>Talent marketplace:</strong> fill-rate, time-to-hire, match quality.</li>
+            <li><strong>CSQM:</strong> requests, processing time, project NPS.</li>
+            <li><strong>Token/Ecosystem:</strong> staking TVL, velocity, liquidity depth, fee-burn ratio.</li>
+            <li><strong>Compliance/Security:</strong> P0 incidents, audit findings, time-to-remediate.</li>
+            <li><strong>Finance:</strong> MRR, gross margin, CAC/LTV, burn/runway.</li>
+          </ul>
+        </section>
+
+        <section id="financial-plan" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">16) Financial Plan (High Level)</h2>
+          <div class="space-y-3 text-sm leading-relaxed">
+            <p><strong>18-month assumptions:</strong></p>
+            <ul class="mt-2 list-disc space-y-2 pl-6">
+              <li>Core team <strong>18–24 FTE</strong> (fully-loaded <strong>$18–22k/mo</strong> per FTE).</li>
+              <li>Security/Audit: <strong>$150–300k</strong>.</li>
+              <li>Legal/Compliance &amp; Licensing: <strong>$250–500k</strong>.</li>
+              <li>Marketing/Growth: <strong>$300–600k</strong>.</li>
+              <li>Initial liquidity/treasury seeding: <strong>$500k–$1.5m</strong>.</li>
+            </ul>
+            <p><strong>Expected revenue by end-2026:</strong> <strong>$150–400k/mo</strong> (conservative, GTM-dependent).</p>
+            <p><strong>Required funding:</strong> per Section 9, with <strong>&ge; 18-month</strong> runway.</p>
+          </div>
+        </section>
+
+        <section id="execution-roadmap" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">17) Execution Roadmap (Dates &amp; Gates)</h2>
+          <div class="space-y-6 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Phase 1: Foundation &amp; Setup (15 Nov 2025–14 Feb 2026)</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>Weeks 1–2:</strong> incorporate HoldCo + OpCo (UAE), open ops accounts; appoint GC/MLRO. <strong>Gate-1:</strong> legal entities live + accounts active.</li>
+                <li><strong>Weeks 2–4:</strong> whitepaper v1.1 + landing site + chain decision matrix draft; start KYC/KYB vendor contract.</li>
+                <li><strong>Weeks 5–6:</strong> finalize tokenomics + SAFT/ToS/Privacy + AML/KYC policies.</li>
+                <li><strong>Week 6:</strong> chain decision (BNB/Polygon/Base/Arbitrum); start smart-contract dev.</li>
+                <li><strong>Weeks 7–8:</strong> audit RFP; select Travel Rule &amp; chain analytics vendors; UI/UX design.</li>
+                <li><strong>Weeks 9–10:</strong> implement Token/Treasury/Vesting/Staking/Airdrop + tests.</li>
+                <li><strong>Weeks 11–12:</strong> initial audit + fixes; open community channels; seed round prep. <strong>Gate-2:</strong> audit passed at acceptable severity.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Phase 2: Build &amp; Early Marketing (15 Feb–14 Aug 2026)</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>Months 1–2:</strong> platform build (Auth, Profiles, Jobs, Matching, Payments stub); KYC integration; employer dashboards.</li>
+                <li><strong>Month 3:</strong> closed beta (friends &amp; family); track AARRR; pricing calibration.</li>
+                <li><strong>Month 4:</strong> limited public beta + ambassador program; pilot CSQM (10 projects).</li>
+                <li><strong>Months 5–6:</strong> selective creator partnerships; DEX listing prep; TGE readiness. <strong>Gate-3:</strong> beta metrics &ge; NPS&gt;45, &ge;50 employer activations, &ge;25% match success.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Phase 3: Launch &amp; Growth (15 Aug 2026–14 Feb 2027)</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>August:</strong> <strong>TGE</strong> + public sale (within compliance limits) + seed DEX liquidity.</li>
+                <li><strong>September:</strong> second DEX; start CEX negotiations; launch <strong>V1</strong> to all users.</li>
+                <li><strong>Oct–Dec:</strong> paid marketing; expanded bug bounty; sign <strong>2–3 CEX</strong> (&ge;1 live).</li>
+                <li><strong>Jan–Feb:</strong> product improvements; functional expansion; scale Support/Success. <strong>Gate-4:</strong> MAU &ge; 15k, active employers &ge; 250, staking TVL &ge; 1.5m SERV.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Phase 4: Expansion &amp; New Services (15 Feb 2027–14 Feb 2028)</h3>
+              <p class="mt-3">Full CSQM go-live, licensing services, distressed-project support, card pilot with EMI partner, geographic expansion (Saudi/Bahrain/Türkiye).</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Phase 5: Maturity &amp; Ecosystem Integration (from 15 Feb 2028)</h3>
+              <p class="mt-3">Gradual DAO rollout, proprietary chain research/PoC, deeper banking partnerships, product innovation streams.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="card-program" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">18) Card Program (Pragmatic Roadmap)</h2>
+          <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed">
+            <li><strong>A:</strong> On/Off-ramp integrations + virtual cards (sandbox) for selected MCCs.</li>
+            <li><strong>B:</strong> White-label card via licensed EMI/processor (spend limits, real-time AML, MCC blocks).</li>
+            <li><strong>C:</strong> Scale acceptance + SERV-linked loyalty.</li>
+          </ul>
+          <p class="text-xs italic text-slate-400">Requires stringent compliance covenants and prior contracts; schedule after commercial launch.</p>
+        </section>
+
+        <section id="legal-details" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">19) Legal Details</h2>
+          <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed">
+            <li><strong>Public sale terms:</strong> geo restrictions, suitability checks, no investment language, risk disclosures.</li>
+            <li><strong>Contracts:</strong> SAFT, Platform ToS, Privacy Policy, DPA/Processor terms, SLAs.</li>
+            <li><strong>IP:</strong> trademark "Crypto Serv" in priority markets; UI/code protection where applicable; clear OSS licensing.</li>
+            <li><strong>Disputes:</strong> ADGM/DIFC/Singapore arbitration venue per contract; governing law clauses.</li>
+            <li><strong>Marketing policy:</strong> prohibition on profit claims; influencer disclosure; marketing material archive.</li>
+          </ul>
+        </section>
+
+        <section id="cybersecurity" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">20) Cybersecurity &amp; Data Protection</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Technical</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Encryption at rest/in transit, HSTS, CSP, rate limiting, WAF, key rotation ≤90 days, pre-merge secret scans.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Procedural</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Annual security training, phishing simulations, background checks for sensitive roles.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Third-parties</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Vendor risk assessments, security clauses, audit rights.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">Privacy</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li>Privacy-by-Design, DPIA for sensitive features, DSAR portal.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="community" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">21) Community &amp; Communications</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <p><strong>Channels:</strong> X/Telegram/Discord/LinkedIn; legal/tech blog.</p>
+            <p><strong>Moderation policy:</strong> playbook, ≤24h response, fraud reporting intake, frequent scam warnings.</p>
+            <p><strong>Transparency:</strong> monthly platform reports, on-chain treasury, summarized meeting notes.</p>
+          </div>
+        </section>
+
+        <section id="bcp" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">22) Business Continuity &amp; Disaster Recovery (BCP/DR)</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <p><strong>Scenarios:</strong> contract exploit, vendor failure, compliance incident, global outage.</p>
+            <p><strong>Responses:</strong> emergency pause (Pausable), public comms, insurance notification, key rotations, restore from encrypted backups.</p>
+            <p><strong>Exercises:</strong> quarterly drills with improvement reports.</p>
+          </div>
+        </section>
+
+        <section id="appendices" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">23) Appendices</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <p><strong>A) TGE Checklist</strong>: audits/reports, deployed contracts, treasury policies, disclosures, risk page, participant KYC (where required), liquidity plan, comms runbook.</p>
+            <p><strong>B) DEX/CEX Listing Pack</strong>: DD pack, TRM/Chainalysis screens, technical requirements, potential MM coordination, comms plan.</p>
+            <p><strong>C) RACI (snapshot)</strong>:</p>
+            <ul class="mt-2 list-disc space-y-2 pl-6">
+              <li>Smart contracts (CTO/Lead Solidity – R/A; Security – C; PM – I)</li>
+              <li>Compliance (MLRO – R/A; Legal – C; CEO – I)</li>
+              <li>Treasury (Treasury Committee – R/A; Finance – C; Security – C)</li>
+            </ul>
+            <p><strong>D) Core Policies (templates)</strong>: Acceptable Use, Key Management, Data Classification, Responsible Disclosure.</p>
+          </div>
+        </section>
+
+        <section id="whitepaper" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">Whitepaper – v1.1</h2>
+          <div class="space-y-4 text-sm leading-relaxed">
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">0) Disclaimer</h3>
+              <p>Informational only; not investment, legal, or financial advice. Jurisdictional restrictions may apply.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">1) Introduction</h3>
+              <p><strong>Crypto Serv</strong> addresses crypto service fragmentation through a unified platform powered by <strong>SERV</strong>, embedding measurable quality standards, loyalty mechanics, and verifiable talent/advisory matching.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">2) Problem</h3>
+              <p>Shortage of specialist talent, trust deficit, licensing complexity, and multi-vendor overhead increase cost, time, and risk.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">3) Solution</h3>
+              <p>An integrated services marketplace + <strong>CSQM</strong> quality mark + expert network + loyalty + listing/licensing facilitation under transparent governance.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">4) Token Design</h3>
+              <ul class="mt-3 list-disc space-y-2 pl-6">
+                <li><strong>Supply:</strong> 1,000,000,000 SERV (fixed).</li>
+                <li><strong>Allocation:</strong> as in Section 8.</li>
+                <li><strong>Utility:</strong> discounts, staking, tiered access, future governance.</li>
+                <li><strong>Discipline:</strong> optional fee-burn from platform revenues.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">5) Architecture</h3>
+              <p>Upgradeable contracts with multi-sig governance; high test coverage; third-party audits; bug bounty. Scalable backend with observability, privacy and security controls by default.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">6) Security &amp; Compliance</h3>
+              <p>Risk-based AML/KYC, Travel Rule integrations, geo-blocks, privacy programs, appointed MLRO/DPO.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">7) Roadmap</h3>
+              <p>Q4 2025–Q1 2026: foundation and core tech. Q2–Q3 2026: MVP/Beta + partnerships. Q3–Q4 2026: TGE + listings + V1 launch. 2027: services expansion + geo expansion; 2028+: DAO/own-chain research.</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">8) Team &amp; Advisors</h3>
+              <p>To be announced at public launch (with background checks, conflict-of-interest commitments, track records).</p>
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-cyan-300">9) Legal Annex</h3>
+              <p>SAFT/ToS/Privacy/SLA/Arbitration; Howey/MiCA analyses; responsible marketing guidance.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="actionable-playbook" class="space-y-6">
+          <h2 class="text-2xl font-bold text-white">24) Actionable Playbook (Next Steps)</h2>
+          <ol class="list-decimal space-y-2 pl-6 text-sm leading-relaxed">
+            <li>Finalize chain <strong>by Week 6</strong> via decision matrix.</li>
+            <li>Sign KYC + audit + chain-analytics vendors <strong>by Weeks 8–10</strong>.</li>
+            <li>Lock tokenomics/SAFT/AML policies <strong>by Weeks 6–7</strong>.</li>
+            <li>Start smart-contract dev <strong>Week 7</strong> with <strong>&ge;95%</strong> coverage and fuzzing.</li>
+            <li>Launch limited public beta <strong>Month 4</strong> of Phase 2 with <strong>Gate-3</strong> metrics.</li>
+            <li>Prepare <strong>TGE runbook</strong> and listing DD pack <strong>6–8 weeks</strong> before August 2026.</li>
+            <li>Form committees (Treasury/Risk/Sec) and kick off ISO-27001 program in <strong>Q1 2026</strong>.</li>
+            <li>Publish monthly transparency reports + investor/community dashboards.</li>
+          </ol>
+          <p class="text-xs italic text-slate-400">
+            The plan is adaptive and will be updated based on market, audit, and regulatory outcomes. Any regulated activity will only be performed through appropriately licensed partners and/or regulated entities.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const overlay = document.getElementById('password-overlay');
+        const content = document.getElementById('protected-content');
+        const input = document.getElementById('password-input');
+        const error = document.getElementById('password-error');
+        const button = document.getElementById('password-submit');
+        const correctPassword = 'Crypto@2030';
+
+        function unlockDocument() {
+          if (input.value === correctPassword) {
+            overlay.classList.add('hidden');
+            content.classList.remove('hidden');
+            input.value = '';
+            error.classList.add('hidden');
+          } else {
+            error.classList.remove('hidden');
+            input.value = '';
+            input.focus();
+          }
+        }
+
+        button.addEventListener('click', unlockDocument);
+        input.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            unlockDocument();
+          }
+        });
+
+        setTimeout(() => input.focus(), 100);
+      });
+    </script>
+  </body>
+</html>
